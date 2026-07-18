@@ -18,7 +18,7 @@ const ADMIN_SALT_HEX = "1c9f4a3d2b8e0f57a1d6c4e9b3f28a10";
 // PBKDF2-SHA256, 210000 iters, 32 bytes, of "admin1234" with above salt.
 const ADMIN_HASH_HEX = ""; // computed at runtime below to avoid embedding
 
-function hexToBytes(hex: string): Uint8Array {
+function hexToBytes(hex: string): Uint8Array<ArrayBuffer> {
   const out = new Uint8Array(new ArrayBuffer(hex.length / 2));
   for (let i = 0; i < out.length; i++) out[i] = parseInt(hex.substr(i * 2, 2), 16);
   return out;

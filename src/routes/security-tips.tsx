@@ -94,7 +94,7 @@ const TIPS: { category: string; items: string[] }[] = [
 ];
 
 export const Route = createFileRoute("/security-tips")({
-  head: () => ({ meta: [{ title: "Security Tips — Security Toolkit" }] }),
+  head: () => ({ meta: [{ title: "Security Tips — Mbrojtja Digjitale" }] }),
   component: () => (
     <AppShell>
       <SecurityTips />

@@ -60,7 +60,7 @@ function Dashboard() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Welcome to Security Toolkit</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Welcome to Mbrojtja Digjitale</h1>
         <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
           A lightweight set of personal cybersecurity tools. Everything runs locally in your browser — no account, no upload, no tracking.
         </p>

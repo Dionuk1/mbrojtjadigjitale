@@ -13,7 +13,7 @@ import { hashFile, md5File } from "@/lib/security-tools";
 import { addRecent, trackEvent } from "@/lib/storage";
 
 export const Route = createFileRoute("/file-hash-checker")({
-  head: () => ({ meta: [{ title: "File Hash Checker — Security Toolkit" }] }),
+  head: () => ({ meta: [{ title: "File Hash Checker — Mbrojtja Digjitale" }] }),
   component: () => (
     <AppShell>
       <FileHashChecker />

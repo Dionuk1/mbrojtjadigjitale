@@ -84,13 +84,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "A lightweight cybersecurity toolkit: password generator, strength checker, passphrase generator, file hash, text encryption and checklist. Everything runs locally in your browser.",
       },
       { name: "author", content: "Mbrojtja Digjitale" },
-      { property: "og:title", content: "Mbrojtja Digjitale" },
+      { property: "og:title", content: "Mbrojtja Digjitale — Private, local password & security tools" },
       {
         property: "og:description",
-        content: "Private, local-first personal security tools that run entirely in your browser.",
+        content: "A lightweight cybersecurity toolkit: password generator, strength checker, passphrase generator, file hash, text encryption and checklist. Everything runs locally in your browser.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Mbrojtja Digjitale — Private, local password & security tools" },
+      { name: "twitter:description", content: "A lightweight cybersecurity toolkit: password generator, strength checker, passphrase generator, file hash, text encryption and checklist. Everything runs locally in your browser." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f716501f-b5e4-4139-98da-f127f1e8fb03/id-preview-2fc57d43--ec7f25ba-8524-41e7-b57b-90a0bc5422ed.lovable.app-1784384130609.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f716501f-b5e4-4139-98da-f127f1e8fb03/id-preview-2fc57d43--ec7f25ba-8524-41e7-b57b-90a0bc5422ed.lovable.app-1784384130609.png" },
     ],
     links: [
       {

@@ -9,38 +9,228 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TextEncryptionRouteImport } from './routes/text-encryption'
+import { Route as StrengthCheckerRouteImport } from './routes/strength-checker'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as SecurityTipsRouteImport } from './routes/security-tips'
+import { Route as SecurityChecklistRouteImport } from './routes/security-checklist'
+import { Route as PasswordGeneratorRouteImport } from './routes/password-generator'
+import { Route as PassphraseGeneratorRouteImport } from './routes/passphrase-generator'
+import { Route as FileHashCheckerRouteImport } from './routes/file-hash-checker'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminLoginRouteImport } from './routes/admin.login'
+import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 
+const TextEncryptionRoute = TextEncryptionRouteImport.update({
+  id: '/text-encryption',
+  path: '/text-encryption',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StrengthCheckerRoute = StrengthCheckerRouteImport.update({
+  id: '/strength-checker',
+  path: '/strength-checker',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityTipsRoute = SecurityTipsRouteImport.update({
+  id: '/security-tips',
+  path: '/security-tips',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityChecklistRoute = SecurityChecklistRouteImport.update({
+  id: '/security-checklist',
+  path: '/security-checklist',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PasswordGeneratorRoute = PasswordGeneratorRouteImport.update({
+  id: '/password-generator',
+  path: '/password-generator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PassphraseGeneratorRoute = PassphraseGeneratorRouteImport.update({
+  id: '/passphrase-generator',
+  path: '/passphrase-generator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FileHashCheckerRoute = FileHashCheckerRouteImport.update({
+  id: '/file-hash-checker',
+  path: '/file-hash-checker',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/admin/login',
+  path: '/admin/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: '/admin/dashboard',
+  path: '/admin/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/file-hash-checker': typeof FileHashCheckerRoute
+  '/passphrase-generator': typeof PassphraseGeneratorRoute
+  '/password-generator': typeof PasswordGeneratorRoute
+  '/security-checklist': typeof SecurityChecklistRoute
+  '/security-tips': typeof SecurityTipsRoute
+  '/settings': typeof SettingsRoute
+  '/strength-checker': typeof StrengthCheckerRoute
+  '/text-encryption': typeof TextEncryptionRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/login': typeof AdminLoginRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/file-hash-checker': typeof FileHashCheckerRoute
+  '/passphrase-generator': typeof PassphraseGeneratorRoute
+  '/password-generator': typeof PasswordGeneratorRoute
+  '/security-checklist': typeof SecurityChecklistRoute
+  '/security-tips': typeof SecurityTipsRoute
+  '/settings': typeof SettingsRoute
+  '/strength-checker': typeof StrengthCheckerRoute
+  '/text-encryption': typeof TextEncryptionRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/login': typeof AdminLoginRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/file-hash-checker': typeof FileHashCheckerRoute
+  '/passphrase-generator': typeof PassphraseGeneratorRoute
+  '/password-generator': typeof PasswordGeneratorRoute
+  '/security-checklist': typeof SecurityChecklistRoute
+  '/security-tips': typeof SecurityTipsRoute
+  '/settings': typeof SettingsRoute
+  '/strength-checker': typeof StrengthCheckerRoute
+  '/text-encryption': typeof TextEncryptionRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/login': typeof AdminLoginRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/file-hash-checker'
+    | '/passphrase-generator'
+    | '/password-generator'
+    | '/security-checklist'
+    | '/security-tips'
+    | '/settings'
+    | '/strength-checker'
+    | '/text-encryption'
+    | '/admin/dashboard'
+    | '/admin/login'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/file-hash-checker'
+    | '/passphrase-generator'
+    | '/password-generator'
+    | '/security-checklist'
+    | '/security-tips'
+    | '/settings'
+    | '/strength-checker'
+    | '/text-encryption'
+    | '/admin/dashboard'
+    | '/admin/login'
+  id:
+    | '__root__'
+    | '/'
+    | '/file-hash-checker'
+    | '/passphrase-generator'
+    | '/password-generator'
+    | '/security-checklist'
+    | '/security-tips'
+    | '/settings'
+    | '/strength-checker'
+    | '/text-encryption'
+    | '/admin/dashboard'
+    | '/admin/login'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  FileHashCheckerRoute: typeof FileHashCheckerRoute
+  PassphraseGeneratorRoute: typeof PassphraseGeneratorRoute
+  PasswordGeneratorRoute: typeof PasswordGeneratorRoute
+  SecurityChecklistRoute: typeof SecurityChecklistRoute
+  SecurityTipsRoute: typeof SecurityTipsRoute
+  SettingsRoute: typeof SettingsRoute
+  StrengthCheckerRoute: typeof StrengthCheckerRoute
+  TextEncryptionRoute: typeof TextEncryptionRoute
+  AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminLoginRoute: typeof AdminLoginRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/text-encryption': {
+      id: '/text-encryption'
+      path: '/text-encryption'
+      fullPath: '/text-encryption'
+      preLoaderRoute: typeof TextEncryptionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/strength-checker': {
+      id: '/strength-checker'
+      path: '/strength-checker'
+      fullPath: '/strength-checker'
+      preLoaderRoute: typeof StrengthCheckerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security-tips': {
+      id: '/security-tips'
+      path: '/security-tips'
+      fullPath: '/security-tips'
+      preLoaderRoute: typeof SecurityTipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security-checklist': {
+      id: '/security-checklist'
+      path: '/security-checklist'
+      fullPath: '/security-checklist'
+      preLoaderRoute: typeof SecurityChecklistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/password-generator': {
+      id: '/password-generator'
+      path: '/password-generator'
+      fullPath: '/password-generator'
+      preLoaderRoute: typeof PasswordGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/passphrase-generator': {
+      id: '/passphrase-generator'
+      path: '/passphrase-generator'
+      fullPath: '/passphrase-generator'
+      preLoaderRoute: typeof PassphraseGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/file-hash-checker': {
+      id: '/file-hash-checker'
+      path: '/file-hash-checker'
+      fullPath: '/file-hash-checker'
+      preLoaderRoute: typeof FileHashCheckerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +238,36 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/admin/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/dashboard': {
+      id: '/admin/dashboard'
+      path: '/admin/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AdminDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  FileHashCheckerRoute: FileHashCheckerRoute,
+  PassphraseGeneratorRoute: PassphraseGeneratorRoute,
+  PasswordGeneratorRoute: PasswordGeneratorRoute,
+  SecurityChecklistRoute: SecurityChecklistRoute,
+  SecurityTipsRoute: SecurityTipsRoute,
+  SettingsRoute: SettingsRoute,
+  StrengthCheckerRoute: StrengthCheckerRoute,
+  TextEncryptionRoute: TextEncryptionRoute,
+  AdminDashboardRoute: AdminDashboardRoute,
+  AdminLoginRoute: AdminLoginRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

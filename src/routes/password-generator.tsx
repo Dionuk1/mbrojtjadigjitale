@@ -17,7 +17,7 @@ import { loadSettings } from "@/lib/settings";
 import { addRecent, trackEvent } from "@/lib/storage";
 
 export const Route = createFileRoute("/password-generator")({
-  head: () => ({ meta: [{ title: "Password Generator — Security Toolkit" }] }),
+  head: () => ({ meta: [{ title: "Password Generator — Mbrojtja Digjitale" }] }),
   component: () => (
     <AppShell>
       <PasswordGenerator />

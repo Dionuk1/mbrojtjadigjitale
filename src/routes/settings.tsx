@@ -13,7 +13,7 @@ import { DEFAULT_SETTINGS, loadSettings, saveSettings, type Settings, type Theme
 import { KEYS, writeJSON } from "@/lib/storage";
 
 export const Route = createFileRoute("/settings")({
-  head: () => ({ meta: [{ title: "Settings — Security Toolkit" }] }),
+  head: () => ({ meta: [{ title: "Settings — Mbrojtja Digjitale" }] }),
   component: () => (
     <AppShell>
       <SettingsPage />

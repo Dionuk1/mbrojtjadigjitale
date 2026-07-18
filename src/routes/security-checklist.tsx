@@ -27,7 +27,7 @@ const ITEMS = [
 ];
 
 export const Route = createFileRoute("/security-checklist")({
-  head: () => ({ meta: [{ title: "Security Checklist — Security Toolkit" }] }),
+  head: () => ({ meta: [{ title: "Security Checklist — Mbrojtja Digjitale" }] }),
   component: () => (
     <AppShell>
       <SecurityChecklist />

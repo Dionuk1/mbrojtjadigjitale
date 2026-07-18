@@ -11,7 +11,7 @@ import { KEYS, readJSON, writeJSON, type AnalyticsEvent } from "@/lib/storage";
 import { DEFAULT_DAILY_TIPS } from "@/lib/tips";
 
 export const Route = createFileRoute("/admin/dashboard")({
-  head: () => ({ meta: [{ title: "Admin Dashboard — Security Toolkit" }, { name: "robots", content: "noindex" }] }),
+  head: () => ({ meta: [{ title: "Admin Dashboard — Mbrojtja Digjitale" }, { name: "robots", content: "noindex" }] }),
   component: AdminDashboard,
 });
 
@@ -101,7 +101,7 @@ function AdminDashboard() {
       <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-border bg-background/80 px-4 backdrop-blur">
         <div className="flex items-center gap-2">
           <ShieldHalf className="h-5 w-5 text-primary" />
-          <span className="font-semibold">Admin · Security Toolkit</span>
+          <span className="font-semibold">Admin · Mbrojtja Digjitale</span>
         </div>
         <Button variant="outline" size="sm" onClick={logout}>
           <LogOut className="mr-2 h-4 w-4" /> Sign out

@@ -15,7 +15,7 @@ import { encryptText, decryptText } from "@/lib/security-tools";
 import { addRecent, trackEvent } from "@/lib/storage";
 
 export const Route = createFileRoute("/text-encryption")({
-  head: () => ({ meta: [{ title: "Text Encryption — Security Toolkit" }] }),
+  head: () => ({ meta: [{ title: "Text Encryption — Mbrojtja Digjitale" }] }),
   component: () => (
     <AppShell>
       <TextEncryption />

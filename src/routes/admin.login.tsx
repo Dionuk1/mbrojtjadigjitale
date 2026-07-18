@@ -14,7 +14,7 @@ const searchSchema = z.object({
 });
 
 export const Route = createFileRoute("/admin/login")({
-  head: () => ({ meta: [{ title: "Admin Login — Security Toolkit" }, { name: "robots", content: "noindex" }] }),
+  head: () => ({ meta: [{ title: "Admin Login — Mbrojtja Digjitale" }, { name: "robots", content: "noindex" }] }),
   validateSearch: (s) => searchSchema.parse(s),
   component: AdminLogin,
 });

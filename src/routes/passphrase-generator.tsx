@@ -17,7 +17,7 @@ import { loadSettings } from "@/lib/settings";
 import { addRecent, trackEvent } from "@/lib/storage";
 
 export const Route = createFileRoute("/passphrase-generator")({
-  head: () => ({ meta: [{ title: "Passphrase Generator — Security Toolkit" }] }),
+  head: () => ({ meta: [{ title: "Passphrase Generator — Mbrojtja Digjitale" }] }),
   component: () => (
     <AppShell>
       <PassphraseGenerator />

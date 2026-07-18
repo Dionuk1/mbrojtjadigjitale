@@ -12,7 +12,7 @@ import { analyzePassword } from "@/lib/security-tools";
 import { addRecent, trackEvent } from "@/lib/storage";
 
 export const Route = createFileRoute("/strength-checker")({
-  head: () => ({ meta: [{ title: "Password Strength Checker — Security Toolkit" }] }),
+  head: () => ({ meta: [{ title: "Password Strength Checker — Mbrojtja Digjitale" }] }),
   component: () => (
     <AppShell>
       <StrengthChecker />

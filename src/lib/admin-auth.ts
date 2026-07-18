@@ -10,12 +10,12 @@ const INACTIVITY_MS = 15 * 60 * 1000;
 const MAX_ATTEMPTS = 5;
 const LOCKOUT_MS = 60 * 1000;
 
-// Default admin: username "admin", password "admin1234" — CHANGE FOR PRODUCTION.
+// Default admin: username "admin", password "sigurohugjithmone69" — CHANGE FOR PRODUCTION.
 // Stored as PBKDF2 hash so the plaintext is not present in source.
 // Salt + hash are constants below; matching happens client-side.
 const ADMIN_USER = "admin";
 const ADMIN_SALT_HEX = "1c9f4a3d2b8e0f57a1d6c4e9b3f28a10";
-// PBKDF2-SHA256, 210000 iters, 32 bytes, of "admin1234" with above salt.
+// PBKDF2-SHA256, 210000 iters, 32 bytes, of "sigurohugjithmone69" with above salt.
 const ADMIN_HASH_HEX = ""; // computed at runtime below to avoid embedding
 
 function hexToBytes(hex: string): Uint8Array<ArrayBuffer> {
@@ -48,7 +48,7 @@ async function pbkdf2(password: string, saltHex: string): Promise<string> {
 // Precomputed expected hash for the default demo credentials.
 // This is derived from a documented default, but the plaintext is never
 // present in source. Replace with your own by generating a hash in-browser.
-const DEFAULT_HASH_PROMISE: Promise<string> = pbkdf2("admin1234", ADMIN_SALT_HEX);
+const DEFAULT_HASH_PROMISE: Promise<string> = pbkdf2("sigurohugjithmone69", ADMIN_SALT_HEX);
 
 export async function adminLogin(user: string, password: string): Promise<{ ok: boolean; error?: string }> {
   const lockUntil = Number(localStorage.getItem(LOCK_KEY) ?? 0);

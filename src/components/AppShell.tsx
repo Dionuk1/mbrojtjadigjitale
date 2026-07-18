@@ -103,7 +103,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </Button>
           <div className="flex items-center gap-2">
             <ShieldHalf className="h-5 w-5 text-primary" />
-            <span className="font-semibold tracking-tight">Security Toolkit</span>
+            <span className="font-semibold tracking-tight">Mbrojtja Digjitale</span>
           </div>
         </header>
         <main className="mx-auto w-full max-w-5xl px-4 py-6 sm:px-6 sm:py-8">
@@ -128,7 +128,7 @@ function SidebarInner({
       <div className="flex h-14 items-center justify-between border-b border-sidebar-border px-4">
         <div className="flex items-center gap-2">
           <ShieldHalf className="h-5 w-5 text-primary" />
-          <span className="font-semibold">Security Toolkit</span>
+          <span className="font-semibold">Mbrojtja Digjitale</span>
         </div>
         {showClose ? (
           <Button

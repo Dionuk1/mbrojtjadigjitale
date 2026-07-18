@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Security Toolkit — Private, local password & security tools" },
+      { title: "Mbrojtja Digjitale — Private, local password & security tools" },
       {
         name: "description",
         content:
           "A lightweight cybersecurity toolkit: password generator, strength checker, passphrase generator, file hash, text encryption and checklist. Everything runs locally in your browser.",
       },
-      { name: "author", content: "Security Toolkit" },
-      { property: "og:title", content: "Security Toolkit" },
+      { name: "author", content: "Mbrojtja Digjitale" },
+      { property: "og:title", content: "Mbrojtja Digjitale" },
       {
         property: "og:description",
         content: "Private, local-first personal security tools that run entirely in your browser.",

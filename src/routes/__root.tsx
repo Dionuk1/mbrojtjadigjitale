@@ -77,14 +77,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Security Toolkit — Private, local password & security tools" },
+      {
+        name: "description",
+        content:
+          "A lightweight cybersecurity toolkit: password generator, strength checker, passphrase generator, file hash, text encryption and checklist. Everything runs locally in your browser.",
+      },
+      { name: "author", content: "Security Toolkit" },
+      { property: "og:title", content: "Security Toolkit" },
+      {
+        property: "og:description",
+        content: "Private, local-first personal security tools that run entirely in your browser.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {

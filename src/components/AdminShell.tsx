@@ -10,7 +10,8 @@ import { cn } from "@/lib/utils";
 import { useServerFn } from "@tanstack/react-start";
 import { adminLogout as adminLogoutFn } from "@/lib/admin.functions";
 
-const NAV = [
+type NavItem = { to: string; label: string; icon: React.ComponentType<{ className?: string }>; exact?: boolean };
+const NAV: NavItem[] = [
   { to: "/admin", label: "Overview", icon: LayoutDashboard, exact: true },
   { to: "/admin/analytics", label: "Analytics", icon: BarChart3 },
   { to: "/admin/tools", label: "Tools", icon: Wrench },
@@ -25,7 +26,7 @@ const NAV = [
   { to: "/admin/appearance", label: "Appearance", icon: Palette },
   { to: "/admin/exports", label: "Exports", icon: Download },
   { to: "/admin/about", label: "About", icon: Info },
-] as const;
+];
 
 const COLLAPSE_KEY = "md.admin.sidebar.collapsed";
 

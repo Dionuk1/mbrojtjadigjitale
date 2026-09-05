@@ -100,7 +100,7 @@ export function AdminShell({
               <Menu className="h-5 w-5" />
             </Button>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Link to="/admin" className="hover:text-foreground">Admin</Link>
+              <Link to="/admin/dashboard" className="hover:text-foreground">Admin</Link>
               {current && current.to !== "/admin" && (
                 <>
                   <span>/</span>

@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WebsiteScannerRouteImport } from './routes/website-scanner'
 import { Route as TextEncryptionRouteImport } from './routes/text-encryption'
 import { Route as StrengthCheckerRouteImport } from './routes/strength-checker'
 import { Route as SettingsRouteImport } from './routes/settings'
@@ -21,6 +22,11 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminLoginRouteImport } from './routes/admin.login'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 
+const WebsiteScannerRoute = WebsiteScannerRouteImport.update({
+  id: '/website-scanner',
+  path: '/website-scanner',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TextEncryptionRoute = TextEncryptionRouteImport.update({
   id: '/text-encryption',
   path: '/text-encryption',
@@ -87,6 +93,7 @@ export interface FileRoutesByFullPath {
   '/settings': typeof SettingsRoute
   '/strength-checker': typeof StrengthCheckerRoute
   '/text-encryption': typeof TextEncryptionRoute
+  '/website-scanner': typeof WebsiteScannerRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/login': typeof AdminLoginRoute
 }
@@ -100,6 +107,7 @@ export interface FileRoutesByTo {
   '/settings': typeof SettingsRoute
   '/strength-checker': typeof StrengthCheckerRoute
   '/text-encryption': typeof TextEncryptionRoute
+  '/website-scanner': typeof WebsiteScannerRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/login': typeof AdminLoginRoute
 }
@@ -114,6 +122,7 @@ export interface FileRoutesById {
   '/settings': typeof SettingsRoute
   '/strength-checker': typeof StrengthCheckerRoute
   '/text-encryption': typeof TextEncryptionRoute
+  '/website-scanner': typeof WebsiteScannerRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/login': typeof AdminLoginRoute
 }
@@ -129,6 +138,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/strength-checker'
     | '/text-encryption'
+    | '/website-scanner'
     | '/admin/dashboard'
     | '/admin/login'
   fileRoutesByTo: FileRoutesByTo
@@ -142,6 +152,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/strength-checker'
     | '/text-encryption'
+    | '/website-scanner'
     | '/admin/dashboard'
     | '/admin/login'
   id:
@@ -155,6 +166,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/strength-checker'
     | '/text-encryption'
+    | '/website-scanner'
     | '/admin/dashboard'
     | '/admin/login'
   fileRoutesById: FileRoutesById
@@ -169,12 +181,20 @@ export interface RootRouteChildren {
   SettingsRoute: typeof SettingsRoute
   StrengthCheckerRoute: typeof StrengthCheckerRoute
   TextEncryptionRoute: typeof TextEncryptionRoute
+  WebsiteScannerRoute: typeof WebsiteScannerRoute
   AdminDashboardRoute: typeof AdminDashboardRoute
   AdminLoginRoute: typeof AdminLoginRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/website-scanner': {
+      id: '/website-scanner'
+      path: '/website-scanner'
+      fullPath: '/website-scanner'
+      preLoaderRoute: typeof WebsiteScannerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/text-encryption': {
       id: '/text-encryption'
       path: '/text-encryption'
@@ -265,6 +285,7 @@ const rootRouteChildren: RootRouteChildren = {
   SettingsRoute: SettingsRoute,
   StrengthCheckerRoute: StrengthCheckerRoute,
   TextEncryptionRoute: TextEncryptionRoute,
+  WebsiteScannerRoute: WebsiteScannerRoute,
   AdminDashboardRoute: AdminDashboardRoute,
   AdminLoginRoute: AdminLoginRoute,
 }

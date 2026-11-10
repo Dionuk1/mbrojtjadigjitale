@@ -9,57 +9,22 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WebsiteScannerRouteImport } from './routes/website-scanner'
-import { Route as TextEncryptionRouteImport } from './routes/text-encryption'
-import { Route as StrengthCheckerRouteImport } from './routes/strength-checker'
-import { Route as SettingsRouteImport } from './routes/settings'
-import { Route as SecurityTipsRouteImport } from './routes/security-tips'
-import { Route as SecurityChecklistRouteImport } from './routes/security-checklist'
-import { Route as PasswordGeneratorRouteImport } from './routes/password-generator'
-import { Route as PassphraseGeneratorRouteImport } from './routes/passphrase-generator'
-import { Route as FileHashCheckerRouteImport } from './routes/file-hash-checker'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AdminLoginRouteImport } from './routes/admin.login'
+import { Route as FileHashCheckerRouteImport } from './routes/file-hash-checker'
+import { Route as PassphraseGeneratorRouteImport } from './routes/passphrase-generator'
+import { Route as PasswordGeneratorRouteImport } from './routes/password-generator'
+import { Route as SecurityChecklistRouteImport } from './routes/security-checklist'
+import { Route as SecurityTipsRouteImport } from './routes/security-tips'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as StrengthCheckerRouteImport } from './routes/strength-checker'
+import { Route as TextEncryptionRouteImport } from './routes/text-encryption'
+import { Route as WebsiteScannerRouteImport } from './routes/website-scanner'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
+import { Route as AdminLoginRouteImport } from './routes/admin.login'
 
-const WebsiteScannerRoute = WebsiteScannerRouteImport.update({
-  id: '/website-scanner',
-  path: '/website-scanner',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TextEncryptionRoute = TextEncryptionRouteImport.update({
-  id: '/text-encryption',
-  path: '/text-encryption',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const StrengthCheckerRoute = StrengthCheckerRouteImport.update({
-  id: '/strength-checker',
-  path: '/strength-checker',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SettingsRoute = SettingsRouteImport.update({
-  id: '/settings',
-  path: '/settings',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SecurityTipsRoute = SecurityTipsRouteImport.update({
-  id: '/security-tips',
-  path: '/security-tips',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SecurityChecklistRoute = SecurityChecklistRouteImport.update({
-  id: '/security-checklist',
-  path: '/security-checklist',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PasswordGeneratorRoute = PasswordGeneratorRouteImport.update({
-  id: '/password-generator',
-  path: '/password-generator',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PassphraseGeneratorRoute = PassphraseGeneratorRouteImport.update({
-  id: '/passphrase-generator',
-  path: '/passphrase-generator',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FileHashCheckerRoute = FileHashCheckerRouteImport.update({
@@ -67,19 +32,54 @@ const FileHashCheckerRoute = FileHashCheckerRouteImport.update({
   path: '/file-hash-checker',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const PassphraseGeneratorRoute = PassphraseGeneratorRouteImport.update({
+  id: '/passphrase-generator',
+  path: '/passphrase-generator',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AdminLoginRoute = AdminLoginRouteImport.update({
-  id: '/admin/login',
-  path: '/admin/login',
+const PasswordGeneratorRoute = PasswordGeneratorRouteImport.update({
+  id: '/password-generator',
+  path: '/password-generator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityChecklistRoute = SecurityChecklistRouteImport.update({
+  id: '/security-checklist',
+  path: '/security-checklist',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityTipsRoute = SecurityTipsRouteImport.update({
+  id: '/security-tips',
+  path: '/security-tips',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StrengthCheckerRoute = StrengthCheckerRouteImport.update({
+  id: '/strength-checker',
+  path: '/strength-checker',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TextEncryptionRoute = TextEncryptionRouteImport.update({
+  id: '/text-encryption',
+  path: '/text-encryption',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteScannerRoute = WebsiteScannerRouteImport.update({
+  id: '/website-scanner',
+  path: '/website-scanner',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminDashboardRoute = AdminDashboardRouteImport.update({
   id: '/admin/dashboard',
   path: '/admin/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/admin/login',
+  path: '/admin/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -188,60 +188,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/website-scanner': {
-      id: '/website-scanner'
-      path: '/website-scanner'
-      fullPath: '/website-scanner'
-      preLoaderRoute: typeof WebsiteScannerRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/text-encryption': {
-      id: '/text-encryption'
-      path: '/text-encryption'
-      fullPath: '/text-encryption'
-      preLoaderRoute: typeof TextEncryptionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/strength-checker': {
-      id: '/strength-checker'
-      path: '/strength-checker'
-      fullPath: '/strength-checker'
-      preLoaderRoute: typeof StrengthCheckerRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/settings': {
-      id: '/settings'
-      path: '/settings'
-      fullPath: '/settings'
-      preLoaderRoute: typeof SettingsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/security-tips': {
-      id: '/security-tips'
-      path: '/security-tips'
-      fullPath: '/security-tips'
-      preLoaderRoute: typeof SecurityTipsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/security-checklist': {
-      id: '/security-checklist'
-      path: '/security-checklist'
-      fullPath: '/security-checklist'
-      preLoaderRoute: typeof SecurityChecklistRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/password-generator': {
-      id: '/password-generator'
-      path: '/password-generator'
-      fullPath: '/password-generator'
-      preLoaderRoute: typeof PasswordGeneratorRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/passphrase-generator': {
-      id: '/passphrase-generator'
-      path: '/passphrase-generator'
-      fullPath: '/passphrase-generator'
-      preLoaderRoute: typeof PassphraseGeneratorRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/file-hash-checker': {
@@ -251,18 +202,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FileHashCheckerRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/passphrase-generator': {
+      id: '/passphrase-generator'
+      path: '/passphrase-generator'
+      fullPath: '/passphrase-generator'
+      preLoaderRoute: typeof PassphraseGeneratorRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/admin/login': {
-      id: '/admin/login'
-      path: '/admin/login'
-      fullPath: '/admin/login'
-      preLoaderRoute: typeof AdminLoginRouteImport
+    '/password-generator': {
+      id: '/password-generator'
+      path: '/password-generator'
+      fullPath: '/password-generator'
+      preLoaderRoute: typeof PasswordGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security-checklist': {
+      id: '/security-checklist'
+      path: '/security-checklist'
+      fullPath: '/security-checklist'
+      preLoaderRoute: typeof SecurityChecklistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security-tips': {
+      id: '/security-tips'
+      path: '/security-tips'
+      fullPath: '/security-tips'
+      preLoaderRoute: typeof SecurityTipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/strength-checker': {
+      id: '/strength-checker'
+      path: '/strength-checker'
+      fullPath: '/strength-checker'
+      preLoaderRoute: typeof StrengthCheckerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/text-encryption': {
+      id: '/text-encryption'
+      path: '/text-encryption'
+      fullPath: '/text-encryption'
+      preLoaderRoute: typeof TextEncryptionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website-scanner': {
+      id: '/website-scanner'
+      path: '/website-scanner'
+      fullPath: '/website-scanner'
+      preLoaderRoute: typeof WebsiteScannerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/dashboard': {
@@ -270,6 +263,13 @@ declare module '@tanstack/react-router' {
       path: '/admin/dashboard'
       fullPath: '/admin/dashboard'
       preLoaderRoute: typeof AdminDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/admin/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
   }

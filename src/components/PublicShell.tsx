@@ -2,7 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import {
   Home, KeyRound, ShieldCheck, FileText, FileDigit, Lock, ListChecks, Lightbulb,
   Settings as SettingsIcon, UserCog, Menu, X, ShieldHalf, QrCode, LifeBuoy,
-  ChevronLeft, ChevronRight, GraduationCap, Wrench, UserCircle,
+  ChevronLeft, ChevronRight, GraduationCap, Wrench, UserCircle, Globe,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";

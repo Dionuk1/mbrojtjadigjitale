@@ -13,6 +13,7 @@ import {
   Menu,
   X,
   ShieldHalf,
+  Globe,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -26,6 +27,7 @@ const NAV = [
   { to: "/passphrase-generator", label: "Passphrase Generator", icon: FileText },
   { to: "/file-hash-checker", label: "File Hash Checker", icon: FileDigit },
   { to: "/text-encryption", label: "Text Encryption", icon: Lock },
+  { to: "/website-scanner", label: "Website Scanner", icon: Globe },
   { to: "/security-checklist", label: "Security Checklist", icon: ListChecks },
   { to: "/security-tips", label: "Security Tips", icon: Lightbulb },
 ] as const;

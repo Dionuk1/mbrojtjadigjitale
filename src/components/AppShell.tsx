@@ -9,7 +9,6 @@ import {
   ListChecks,
   Lightbulb,
   Settings as SettingsIcon,
-  UserCog,
   Menu,
   X,
   ShieldHalf,
@@ -34,7 +33,6 @@ const NAV = [
 
 const SECONDARY = [
   { to: "/settings", label: "Settings", icon: SettingsIcon },
-  { to: "/admin/login", label: "Admin Login", icon: UserCog },
 ] as const;
 
 export function AppShell({ children }: { children: React.ReactNode }) {

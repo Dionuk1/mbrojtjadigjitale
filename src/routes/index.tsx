@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import {
-  KeyRound, ShieldCheck, FileText, FileDigit, Lock, ListChecks, Search, Trash2, Lightbulb,
+  KeyRound, ShieldCheck, FileText, FileDigit, Lock, ListChecks, Search, Trash2, Lightbulb, ShieldHalf, Quote,
 } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { Card } from "@/components/ui/card";
@@ -75,6 +75,23 @@ function Dashboard() {
           className="pl-9"
         />
       </div>
+
+      <Card className="relative animate-fade-in overflow-hidden border-primary/20 bg-gradient-to-br from-primary/10 via-card to-card p-5 sm:p-6">
+        <ShieldHalf className="pointer-events-none absolute -right-4 -top-4 h-24 w-24 text-primary/10 sm:h-28 sm:w-28" aria-hidden />
+        <div className="relative flex items-start gap-3 sm:gap-4">
+          <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-primary/15 text-primary">
+            <Quote className="h-5 w-5" />
+          </div>
+          <div className="min-w-0">
+            <div className="text-[11px] font-medium uppercase tracking-wider text-primary">Daily Security Quote</div>
+            <blockquote className="mt-1.5 text-base font-medium italic leading-snug sm:text-lg">
+              “Security is not a product, but a process.”
+            </blockquote>
+            <div className="mt-1 text-sm text-muted-foreground">— Bruce Schneier</div>
+            <p className="mt-3 text-sm text-muted-foreground">A small step toward better digital protection starts today.</p>
+          </div>
+        </div>
+      </Card>
 
       <PrivacyNote />
 

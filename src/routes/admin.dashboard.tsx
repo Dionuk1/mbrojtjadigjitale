@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
+import { adminMe } from "@/lib/admin.functions";
 import { AdminShell } from "@/components/AdminShell";
 import { Card } from "@/components/ui/card";
 
@@ -14,6 +15,11 @@ export const Route = createFileRoute("/admin/dashboard")({
       { name: "robots", content: "noindex" },
     ],
   }),
+  beforeLoad: async ({ location }) => {
+    const { user } = await adminMe();
+    if (!user) throw redirect({ to: "/admin/login", search: { redirect: location.href } });
+    return { adminUser: user };
+  },
   component: AdminDashboard,
 });
 

@@ -1,12 +1,12 @@
-import { createFileRoute, useNavigate, useSearch } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { createFileRoute, redirect, useNavigate, useSearch } from "@tanstack/react-router";
+import { useState } from "react";
 import { Eye, EyeOff, ShieldHalf } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { adminLogin, isAdmin } from "@/lib/admin-auth";
+import { adminLogin, adminMe } from "@/lib/admin.functions";
 import { z } from "zod";
 
 const searchSchema = z.object({
@@ -16,6 +16,10 @@ const searchSchema = z.object({
 export const Route = createFileRoute("/admin/login")({
   head: () => ({ meta: [{ title: "Admin Login — Mbrojtja Digjitale" }, { name: "robots", content: "noindex" }] }),
   validateSearch: (s) => searchSchema.parse(s),
+  beforeLoad: async () => {
+    const { user } = await adminMe();
+    if (user) throw redirect({ to: "/admin/dashboard" });
+  },
   component: AdminLogin,
 });
 
@@ -27,10 +31,6 @@ function AdminLogin() {
   const [show, setShow] = useState(false);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
-
-  useEffect(() => {
-    if (isAdmin()) navigate({ to: "/admin/dashboard" });
-  }, [navigate]);
 
   function safeRedirect(): "/admin/dashboard" {
     const r = search.redirect;
@@ -44,10 +44,10 @@ function AdminLogin() {
     e.preventDefault();
     setBusy(true);
     setErr("");
-    const res = await adminLogin(user.trim(), pw);
+    const res = await adminLogin({ data: { username: user.trim(), password: pw } });
     setBusy(false);
     if (!res.ok) {
-      setErr(res.error ?? "Invalid credentials.");
+      setErr(("error" in res && res.error) || "Invalid credentials.");
       return;
     }
     navigate({ to: safeRedirect() });

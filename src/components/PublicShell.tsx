@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import {
   Home, KeyRound, ShieldCheck, FileText, FileDigit, Lock, ListChecks, Lightbulb,
-  Settings as SettingsIcon, UserCog, Menu, X, ShieldHalf, QrCode, LifeBuoy,
+  Settings as SettingsIcon, Menu, X, ShieldHalf, QrCode, LifeBuoy,
   ChevronLeft, ChevronRight, GraduationCap, Wrench, UserCircle, Globe,
 } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -39,7 +39,6 @@ const GROUPS: { title: string; icon: React.ComponentType<{ className?: string }>
     icon: UserCircle,
     items: [
       { to: "/settings", label: "Settings", icon: SettingsIcon },
-      { to: "/admin/login", label: "Admin", icon: UserCog },
     ],
   },
 ];
